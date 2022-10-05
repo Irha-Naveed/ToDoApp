@@ -1,0 +1,25 @@
+<% if @todo.errors.any? %>
+    <h2>Here are the following errors which prevent it from performing current action </h2>
+    <ul>
+        <% @todo.errors.full_messages.each do |msg| %>
+            <li>
+                <%= msg%>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @todo do |e| %>
+    <p>
+        <%= e.label :name%><br>
+        <%= e.text_field :name%>
+    </p>
+    <p>
+        <%= e.label :Description %><br>
+        <%= e.text_area :description %>
+    </p>
+    <p>
+        <%= e.submit %>
+    </p>
+<% end %>
+<%= link_to "Go Back", todos_path %>
