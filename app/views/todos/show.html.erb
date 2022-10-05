@@ -5,5 +5,10 @@
 </p>
 
 <p>
-    Description: <%= @todo.description%>
+    Description: <%= @todo.description %>
+</p>
+
+<p>
+    <%= link_to "Edit", edit_todo_path(@todo) %> |
+    <%= link_to "Go Back", todos_path%>
 </p>
